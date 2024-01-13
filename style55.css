@@ -1,0 +1,261 @@
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-color: #F0F0F0;
+	color: #333;
+	line-height: 1.6;
+	padding: 20px;
+  }
+  
+  /* Center the calendar wrapper on the page */
+  .wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2rem;
+	background: #F0F0F0;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  .logout-container {
+    text-align: right; /* Aligns the logout button to the right */
+    padding: 1rem; /* Adds some padding around the logout button */
+    background-color: #F0F0F0; /* Matches the body's background color */
+}
+
+.logout {
+    padding: 0.5rem 1rem;
+    background: #4CAF50;
+    color: #F0F0F0;
+    border-radius: 4px;
+    transition: background 0.2s ease-in-out;
+    text-decoration: none; /* Removes underline from link */
+    font-weight: bold; /* Optional: makes the text bold */
+}
+
+.logout:hover {
+    background: #388E3C;
+}
+  /* Style the calendar container */
+  .container-calendar {
+	padding: 2rem;
+	background: #FFF;
+	border-radius: 12px;
+	margin-bottom: 2rem;
+  }
+  .calendar-title {
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	font-weight: bold; /* Makes the text bold */
+	color: #3F51B5; /* Sets the text color to blue */
+  }
+  /* Style the main title of the calendar */
+  h1 {
+	color: #3F51B5;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+  }
+  
+  /* Style sections for events and reminders */
+  #event-section, #reminder-section {
+	margin-bottom: 2rem;
+	text-align: center;
+  }
+  
+  /* Style buttons with a more modern appearance */
+  button {
+	background: #3F51B5;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 4px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background 0.2s ease-in-out;
+  }
+  
+  /* Change button color on hover */
+  button:hover {
+	background: #303F9F;
+  }
+  
+  /* Style for the delete button */
+  .delete-event {
+	background: #F44336;
+  }
+  
+  /* Style the event marker */
+  .event-marker::after {
+	content: '';
+	display: block;
+	width: 15px; /* Increased size */
+	height: 15px; /* Increased size */
+	background-color: #ff4136;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px; /* Position adjusted for the top right corner */
+	right: 5px; /* Position adjusted for the top right corner */
+  }
+  
+  
+  /* Tooltip for events */
+  .event-tooltip {
+	display: none;
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #FFF;
+	padding: 0.5rem;
+	border-radius: 4px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 10;
+  }
+  
+  /* Show tooltip on event marker hover */
+  .event-marker:hover .event-tooltip {
+	display: block;
+  }
+  
+  /* Style the calendar table */
+  .table-calendar {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1rem;
+  }
+  
+  /* Style the table headers */
+  .table-calendar th {
+	background-color: #3F51B5;
+	color: #FFFFFF;
+	padding: 0.75rem;
+  }
+
+  
+  .table-calendar td {
+	font-size: 1em; /* Adjust as needed */
+	padding: 20px; /* Adjust as needed */
+	border: 1px solid #ddd;
+	text-align: center;
+	vertical-align: middle;
+	position: relative; /* Ensure positioning is relative for the absolute marker */
+  }
+  /* Highlight table cells on hover */
+  .table-calendar td:hover {
+	background-color: #EEEEEE;
+  }
+  
+  #monthAndYear {
+	text-align: center; /* Center the header text */
+	font-size: 2em;
+	padding: 0.5em 0;
+  }
+  
+  /* Adjust the button container to position arrows on opposite sides */
+  .button-container-calendar {
+	display: flex;
+	justify-content: space-between; /* This will push the arrows to the sides */
+	align-items: center;
+	padding: 0.5em;
+  }
+  
+  /* Position the previous arrow to the left */
+  #previous {
+	margin-left: 0; /* Remove any margin to align to the left */
+  }
+  
+  /* Position the next arrow to the right */
+  #next {
+	margin-right: 0; /* Remove any margin to align to the right */
+  }
+  
+  /* Additional styles for responsive design */
+  @media (max-width: 768px) {
+	/* Make sure the arrows and title adjust on smaller screens */
+	#previous {
+	  position: absolute;
+	  left: 10px;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+  
+	#next {
+	  position: absolute;
+	  right: 10px;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+	
+	#monthAndYear {
+	  position: static; /* Reset the position for smaller screens */
+	  padding: 1em 0; /* Adjust padding to ensure it looks good */
+	}
+  }
+  
+  /* Style the footer of the calendar */
+  .footer-container-calendar {
+	text-align: center;
+	padding: 1rem;
+	background: #F7F7F7;
+	border-top: 1px solid #E0E0E0;
+	border-radius: 0 0 12px 12px;
+  }
+  
+  /* Style the dropdowns in the footer */
+  .footer-container-calendar select {
+	padding: 0.5rem;
+	margin: 0 0.5rem;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	background: #FFF;
+  }
+  
+  /* Style the send invite button */
+  .send-invite {
+	padding: 0.5rem 1rem;
+	background: #4CAF50;
+	color: #FFFFFF;
+	border-radius: 4px;
+	transition: background 0.2s ease-in-out;
+  }
+  
+  /* Change send invite button color on hover */
+  .send-invite:hover {
+	background: #388E3C;
+  }
+.logout{
+	padding: 0.5rem 1rem;
+	background: #4CAF50;
+	color: #FFFFFF;
+	border-radius: 4px;
+	transition: background 0.2s ease-in-out;
+}
+
+.logout:hover {
+	background: #388E3C
+
+}
+  /* Additional responsive design adjustments */
+  @media (max-width: 768px) {
+	h1 {
+	  font-size: 1.75rem;
+	}
+  
+	.table-calendar th, .table-calendar td {
+	  padding: 1rem;
+	}
+  
+	.send-invite, button {
+	  padding: 0.5rem 1rem;
+	  font-size: 0.9rem;
+	}
+  .logout,button{
+	padding: 0.5rem 1rem;
+	font-size: 0.9rem;
+	
+  }
+	.wrapper {
+	  padding: 1rem;
+	}
+  }
+  
+  

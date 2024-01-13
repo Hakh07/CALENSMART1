@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Event Invitation</title>
+    <link rel="stylesheet" href="invite.css" />
+</head>
+<body>
+    <section class="form-container">
+        <header>
+            <h1>Event Invitation</h1>
+        </header>
+        <form action="form-process.php" method="POST" class="form">
+            <label for="eventDate">Event Date</label>
+            <input type="date" id="eventDate" name="eventDate" required aria-label="Event Date">
+            
+            <label for="event">Event Title</label>
+            <input type="text" id="event" name="event" required placeholder="Enter the event title" aria-label="Event Title">
+            
+            <label for="description">Event Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Describe your event" aria-label="Event Description"></textarea>
+            
+            <label for="location">Event Location</label>
+            <input type="text" id="location" name="location" required placeholder="Enter the location" aria-label="Event Location">
+            
+            <label for="email">Participants Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter participant's email" aria-label="Participant's Email">
+            
+            <button><a href="calendar.html">Send Invite</button>
+        </form>
+    </section>
+</body>
+</html>
+
